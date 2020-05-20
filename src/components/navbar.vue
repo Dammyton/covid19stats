@@ -14,8 +14,11 @@
           </b-navbar-nav>
         </b-container>
       </b-navbar>
+    
+
+
     </div>
-</template>
+    </template>
 
 <script>
 

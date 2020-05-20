@@ -1,4 +1,4 @@
-# vuejs-tech-ass
+# Covid-19 Stats
 ```
 A monitoring dashboard for corona virus
 

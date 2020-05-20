@@ -72,7 +72,6 @@
               <template v-slot:cell(index)="row">
                 <span>{{row.index + 1}}</span>
               </template>
-
             </b-table>
             <b-col sm="12" md="12" class="my-1">
               <b-pagination
@@ -108,20 +107,20 @@ export default {
           sortDirection: "desc"
         },
         {
-          key: "total_cases",
+          key: "cases.active",
           label: `Total Cases`,
           sortable: true,
           sortByFormatted: true,
           filterByFormatted: true
         },
         {
-          key: "total_deaths",
+          key: "deaths.total",
           label: "Total Deaths",
           sortable: true
         },
 
         {
-          key: "total_recovered",
+          key: "cases.recovered",
           label: "Total Recoveries",
           sortable: true
         }
@@ -138,12 +137,22 @@ export default {
     };
   },
   created() {
-    let uri = `https://corona-virus-stats.herokuapp.com/api/v1/cases/countries-search`;
-    axios.get(uri).then(response => {
-      console.log(response.data.data.rows, "View Statistics");
-      
-      this.items = response.data.data.rows;
-    });
+    axios({
+      method: "GET",
+      url: "https://covid-193.p.rapidapi.com/statistics",
+      headers: {
+        "content-type": "application/octet-stream",
+        "x-rapidapi-host": "covid-193.p.rapidapi.com",
+        "x-rapidapi-key": "d7271e3630msha1c735b8bc98060p186254jsn8723f1471308"
+      }
+    })
+      .then(response => {
+        console.log(response.data.response, "fd");
+        this.items = response.data.response;
+      })
+      .catch(error => {
+        console.log(error);
+      });
   },
   methods: {
     info(item, index, button) {
@@ -189,7 +198,8 @@ button.actions {
 h3 {
   margin-top: 50px;
 }
-.card-body{
-  box-shadow: 0 1px 3px 0 rgba(0,0,0,.08), 0 5px 26px 0 rgba(67,94,131,.15);
+.card-body {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08),
+    0 5px 26px 0 rgba(67, 94, 131, 0.15);
 }
 </style>

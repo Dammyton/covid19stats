@@ -7,6 +7,8 @@
     <globalstats/>
 
     <countrystats/>
+
+    <footerbar/>
   </div>
 </template>
 
@@ -15,6 +17,7 @@ import navbar from './navbar'
 import breadcrumb from './breadcrumb'
 import globalstats from './global-stats'
 import countrystats from './country-stats'
+import footerbar from './footer'
 
 export default {
   name: 'App',
@@ -23,6 +26,7 @@ export default {
     breadcrumb,
     globalstats,
     countrystats,
+    footerbar
   }
 }
 </script>

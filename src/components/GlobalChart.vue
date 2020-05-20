@@ -11,10 +11,19 @@ export default {
       labels: ['Total Cases', 'Total Deaths', 'Total Recoveries'],
       datasets: [
         {
-          label: 'Statistics',
-           backgroundColor: '#007bff',
+          label: 'Total Cases',
+           backgroundColor: ['yellow','red', 'green'],
           data: []
+        },
+        {
+          label:'Total Deaths',
+          backgroundColor: ['red'],
+        },
+        {
+          label:'Total Recoveries',
+          backgroundColor: ['green'],
         }
+        
       ]
     };
 
