@@ -1,6 +1,7 @@
 # Covid-19 Stats
 ```
 A monitoring dashboard for corona virus
+Demo: https://https://covid19-statistics-1.netlify.app/
 
 ## Project setup
 ```
